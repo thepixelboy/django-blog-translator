@@ -14,3 +14,6 @@ class Post(models.Model):
         on_delete=models.CASCADE,
     )
     status = models.IntegerField(choices=STATUS, default=0)
+
+    def __str__(self):
+        return self.title
