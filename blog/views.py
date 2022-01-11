@@ -10,9 +10,10 @@ class BlogView(generic.DetailView):
     template_name = "blog.html"
 
 
-class HomeView(generic.TemplateView):
-    template_name = "home.html"
-
-
 class AboutView(generic.TemplateView):
     template_name = "about.html"
+
+
+class PostList(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by("created_at")
+    template_name = "home.html"
