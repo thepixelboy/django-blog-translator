@@ -15,5 +15,5 @@ class AboutView(generic.TemplateView):
 
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(status=1).order_by("created_at")
+    queryset = Post.objects.filter(status=1).order_by("-created_at")
     template_name = "home.html"
