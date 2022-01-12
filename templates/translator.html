@@ -1,26 +1,25 @@
 {% extends "base.html" %} {% block content %}
 <div class="container">
-  <form action="{% url 'get_tanslation' %}" method="post">
+  <form action="{% url 'translator_view' %}" method="post">
+    {% csrf_token %}
     <div class="row">
-      <div class="col-sm-6 mt-3 left">
-        <input
-          type="text-area"
+      <div class="col-md-6 mt-3 left">
+        <textarea
           class="form-control"
-          placeholder="First name"
-          aria-label="First name"
+          placeholder="English"
+          aria-label="English"
           rows="3"
-        />
+        ></textarea>
       </div>
-      <div class="col-sm-6 mt-3 left">
-        <input
-          type="text-area"
+      <div class="col-md-6 mt-3 left">
+        <textarea
           class="form-control"
-          placeholder="Last name"
-          aria-label="Last name"
+          placeholder="German"
+          aria-label="German"
           rows="3"
-        />
+        ></textarea>
       </div>
-      <div class="col-12 justify-content-end">
+      <div class="col-12 text-center mt-4">
         <button type="submit" class="btn btn-primary">Translate</button>
       </div>
     </div>
