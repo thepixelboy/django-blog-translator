@@ -20,33 +20,52 @@
       </symbol>
     </svg>
     <div class="container">
-      <header
-        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      <nav
+        class="navbar navbar-expand-md navbar-light bg-white border-bottom"
+        aria-label="Top Navbar"
       >
-        <a
-          href="/"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none"
-        >
-          <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#grid"></use>
-          </svg>
-          <span class="fs-4">The Lorem Ipsum Blog</span>
-        </a>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'home_view' %}"
+            ><svg class="bi me-2" width="40" height="32">
+              <use xlink:href="#grid"></use>
+            </svg>
+            <span class="fs-4">The Lorem Ipsum Blog</span></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#topNavbar"
+            aria-controls="topNavbar"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a
-              href="{% url 'home_view' %}"
-              class="nav-link active"
-              aria-current="page"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'about_view' %}" class="nav-link">About</a>
-          </li>
-        </ul>
-      </header>
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="topNavbar"
+          >
+            <ul class="nav nav-pills">
+              <li class="nav-item">
+                <a
+                  href="{% url 'home_view' %}"
+                  class="nav-link active"
+                  aria-current="page"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'about_view' %}" class="nav-link">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'about_view' %}" class="nav-link">Translator</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
 
     {% block content %} {% endblock content %}
