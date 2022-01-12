@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <form action="{% url 'get_tanslation' %}" method="post">
+    <div class="row">
+      <div class="col-sm-6 mt-3 left">
+        <input
+          type="text-area"
+          class="form-control"
+          placeholder="First name"
+          aria-label="First name"
+          rows="3"
+        />
+      </div>
+      <div class="col-sm-6 mt-3 left">
+        <input
+          type="text-area"
+          class="form-control"
+          placeholder="Last name"
+          aria-label="Last name"
+          rows="3"
+        />
+      </div>
+      <div class="col-12 justify-content-end">
+        <button type="submit" class="btn btn-primary">Translate</button>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}
